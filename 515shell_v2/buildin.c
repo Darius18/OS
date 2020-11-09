@@ -126,7 +126,7 @@ int cat_command(char **args)
     if (fp == NULL)
     {
         printf("no such file %s", filename);
-        return 0;
+        return 1;
     }
     else
     {
@@ -145,12 +145,12 @@ int cp_command(char **args)
     if ((fp1 = fopen(args[1], "r")) == NULL)
     {
         printf("no such file %s.\n", args[1]);
-        return 0;
+        return 1;
     }
     // If dest is not exit, create it
     if ((fp2 = fopen(args[2], "w")) == NULL)
     {
-        return 0;
+        return 1;
     }
 
     file_copy(fp1, fp2);
@@ -176,8 +176,8 @@ int mkdir_command(char **args)
     }
     else
     {
-        perror("mkdir");
-        return 0;
+        fprintf(stderr, "🙀🙀🙀❌error: make drictory failed!\n");
+        return 1;
     }
 }
 
@@ -190,8 +190,8 @@ int mv_command(char **args)
     }
     else
     {
-        perror("rename error");
-        return 0;
+        fprintf(stderr, "🙀🙀🙀❌error:move failed!\n");
+        return 1;
     }
 }
 
@@ -214,7 +214,7 @@ int rm_command(char **args)
     }
     else
     {
-        perror("Remove:");
-        return 0;
+        fprintf(stderr, "🙀🙀🙀❌error:remove failed!\n");
+        return 1;
     }
 }
