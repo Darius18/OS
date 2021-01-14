@@ -92,6 +92,7 @@ bool Algorithm::FIFO_Algorithm(vector<int> pages, string outputFileName){
     output_file<<"总页数为"<<pageNum<<endl;
     output_file<<"缺页数为"<<lackNum<<endl;
     output_file<<"缺页率为："<<lackNum<<"/"<<pageNum<<"（"<<lackRate<<"）"<<endl;
+    output_file<<"done!"<<endl;
     output_file.close();
 
     return true;

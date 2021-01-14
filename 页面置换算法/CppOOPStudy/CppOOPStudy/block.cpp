@@ -41,3 +41,19 @@ int block::getLife(){
 void block::setLife(int lifeToSet){
     life = lifeToSet;
 }
+
+/**
+ 获取block的next
+ @return next
+ */
+int block::getnext(){
+    return next;
+};
+
+/**
+ 设置block的next
+ @param nextToset 要设置的next值
+ */
+void block::setNext(int nextToset){
+    next = nextToset;
+}
